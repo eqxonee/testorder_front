@@ -13,7 +13,7 @@ const Orders = () => {
 
 
     let dateApiWorker = new DateApiWorker();
-    //let [date,setDate] = useState([]);
+    let [date,setDate] = useState([]);
 
     const loadOrders = () => {
         orderApiWorker.getOrders().then(
@@ -27,28 +27,28 @@ const Orders = () => {
         )
     }
 
-    // const loadDate = () => {
-    //     dateApiWorker.getDate().then(
-    //         response => {
-    //             setDate(response.data)
-    //         }
-    //     ).catch(
-    //         error => {
-    //             setHasApiError(true);
-    //         }
-    //     )
-    // }
+    const loadDate = () => {
+        dateApiWorker.getDate().then(
+            response => {
+                setDate(response.data)
+            }
+        ).catch(
+            error => {
+                setHasApiError(true);
+            }
+        )
+    }
 
 
     useEffect(() => {
-        //loadDate();
+        loadDate();
         loadOrders();
     },);
 
     return (
 
         <div>
-            TODO date right here
+            <h1>{date}</h1>
             <h1>Заказы покупателей</h1>
             {
                 hasApiError === true

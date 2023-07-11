@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DetailsList = ({orderDetails}) => {
+const OrderDetailsList = ({orderDetails}) => {
     return (
         <ul>
             {
@@ -8,10 +8,10 @@ const DetailsList = ({orderDetails}) => {
                     <tr>
                         <li scope ="row" key={index}>key={index+1}</li>
                         <td>{orderDetails.id}</td>
-                        <td>name= {orderDetails.serialNumber}</td>
-                        <td>adress= {orderDetails.productName}</td>
-                        <td>price= {orderDetails.orderId}</td>
-                        <td>date= {orderDetails.quantity}</td>
+                        <td>serialNumber = {orderDetails.serialNumber}</td>
+                        <td>name = {orderDetails.productName}</td>
+                        <td>orderId = {orderDetails.orderId}</td>
+                        <td>quantity = {orderDetails.quantity}</td>
                     </tr>
                 ))
 
@@ -22,4 +22,4 @@ const DetailsList = ({orderDetails}) => {
     );
 };
 
-export default DetailsList;
+export default OrderDetailsList;

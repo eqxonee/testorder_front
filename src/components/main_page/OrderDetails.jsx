@@ -1,9 +1,8 @@
 import React from 'react';
 import {useEffect, useState} from "@types/react";
-import OrderApiWorker from "../api/OrderApiWorker";
 import DetailsApiWorker from "../api/DetailsApiWorker";
 import {Alert} from "antd";
-import OrdersList from "./OrdersList";
+
 
 const OrderDetails = () => {
 

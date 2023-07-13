@@ -1,10 +1,16 @@
 import React from 'react';
+import AddNewOrderForm from "./AddNewOrderForm";
+//import {Button} from "antd";
+//import AddNewOrderForm from "./AddNewOrderForm";
 //import {Space} from "antd";
 
 const OrdersList = ({orders}) => {
 
+
+
     return (
        <div>
+           <button onClick={() => AddNewOrderForm}>Добавить новый заказ</button>
 
            {/*<Space size={[8, 16]} wrap>*/}
             {
@@ -19,9 +25,9 @@ const OrdersList = ({orders}) => {
                     {
                         order.orderDetails.map((item) =>(
                             <ul key ={item.id}>
-                                <li>Серийный номер продукта: {item.serialNumber}...</li>
-                                <li>Название продукта: {item.productName}... </li>
-                                <li>Id заказчика: {item.orderId}...</li>
+                                <li>Серийный номер продукта: {item.serialNumber}</li>
+                                <li>Название продукта: {item.productName}</li>
+                                <li>Id заказчика: {item.orderId}</li>
                                 <li>Количетсво продукта: {item.quantity}</li>
                                 &nbsp;
                             </ul>

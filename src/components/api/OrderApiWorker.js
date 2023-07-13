@@ -13,6 +13,10 @@ class OrderApiWorker {
         return await this.#axios.get("/get-all");
     }
 
+    async ordersAddNew(order) {
+        return await this.#axios.post("/add-new", order);
+    }
+
 }
 
 export default OrderApiWorker;

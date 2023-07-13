@@ -4,6 +4,7 @@ import OrderApiWorker from "../api/OrderApiWorker";
 import {Alert} from "antd";
 import OrdersList from "./OrdersList";
 import DateApiWorker from "../api/DateApiWorker";
+import ModalButton from "./ModalButton";
 
 const Orders = () => {
 
@@ -56,6 +57,7 @@ const Orders = () => {
                     : <OrdersList orders={orders}/>
 
             }
+             <ModalButton loadOrders={loadOrders}/>
 
         </div>
     );

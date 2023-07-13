@@ -1,18 +1,15 @@
 import React from 'react';
-import AddNewOrderForm from "./AddNewOrderForm";
+//import AddNewOrderForm from "./AddNewOrderForm";
 //import {Button} from "antd";
 //import AddNewOrderForm from "./AddNewOrderForm";
-//import {Space} from "antd";
+import {Space} from "antd";
 
 const OrdersList = ({orders}) => {
 
-
-
     return (
        <div>
-           <button onClick={() => AddNewOrderForm}>Добавить новый заказ</button>
 
-           {/*<Space size={[8, 16]} wrap>*/}
+           <Space size={[8, 16]} wrap>
             {
 
                 orders.map((order)=>(
@@ -38,7 +35,7 @@ const OrdersList = ({orders}) => {
                 ))
 
             }
-           {/*</Space>*/}
+           </Space>
 
        </div>
     );

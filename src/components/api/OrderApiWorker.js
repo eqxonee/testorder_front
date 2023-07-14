@@ -1,6 +1,7 @@
 import axios from "axios";
 
 
+
 class OrderApiWorker {
 #axios;
 
@@ -20,6 +21,10 @@ class OrderApiWorker {
 
     async orderUpdateById(id, order) {
         return await this.#axios.put("/updateById", order);
+    }
+
+    async orderDeleteById(id) {
+        return await this.#axios.delete(`/deleteById/${id}`);
     }
 
 

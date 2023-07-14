@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import OrderApiWorker from "../api/OrderApiWorker";
-// import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
 import {Alert} from "antd";
 import OrdersList from "./OrdersList";
 import DateApiWorker from "../api/DateApiWorker";
 import ModalButtonOrder from "./ModalButtonOrder";
 import ModalButtonOrderDetails from "./ModalButtonOrderDetails";
 import ModalButtonUpdateOrder from "./ModalButtonUpdateOrder";
+import ModalButtonDeleteOrder from "./ModalButtonDeleteOrder";
 
 const Orders = () => {
 
@@ -64,6 +64,8 @@ const Orders = () => {
             <ModalButtonOrderDetails loadOrders={loadOrders}/>
             &nbsp;
             <ModalButtonUpdateOrder loadOrders={loadOrders} orders={orders}/>
+            &nbsp;
+            <ModalButtonDeleteOrder loadOrders={loadOrders} orders={orders}/>
 
         </div>
     );

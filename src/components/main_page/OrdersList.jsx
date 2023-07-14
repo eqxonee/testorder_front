@@ -1,9 +1,6 @@
 import React from 'react';
-//import AddNewOrderForm from "./AddNewOrderForm";
-//import {Button} from "antd";
-//import AddNewOrderForm from "./AddNewOrderForm";
 import {Space} from "antd";
-import ModalButtonUpdateOrder from "./ModalButtonUpdateOrder";
+
 
 const OrdersList = ({orders}) => {
 

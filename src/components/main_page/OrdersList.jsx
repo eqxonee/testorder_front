@@ -3,6 +3,7 @@ import React from 'react';
 //import {Button} from "antd";
 //import AddNewOrderForm from "./AddNewOrderForm";
 import {Space} from "antd";
+import ModalButtonUpdateOrder from "./ModalButtonUpdateOrder";
 
 const OrdersList = ({orders}) => {
 
@@ -30,7 +31,6 @@ const OrdersList = ({orders}) => {
                             </ul>
                         ))
                     }
-
                 </ul>
                 ))
 

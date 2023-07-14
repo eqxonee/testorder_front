@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 class OrderApiWorker {
 #axios;
 
@@ -17,6 +18,9 @@ class OrderApiWorker {
         return await this.#axios.post("/add-new", order);
     }
 
+    async orderUpdateById(id, order) {
+        return await this.#axios.put("/updateById", order);
+    }
 
 
 }

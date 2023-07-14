@@ -6,6 +6,7 @@ import OrdersList from "./OrdersList";
 import DateApiWorker from "../api/DateApiWorker";
 import ModalButtonOrder from "./ModalButtonOrder";
 import ModalButtonOrderDetails from "./ModalButtonOrderDetails";
+import ModalButtonUpdateOrder from "./ModalButtonUpdateOrder";
 
 const Orders = () => {
 
@@ -61,6 +62,8 @@ const Orders = () => {
              <ModalButtonOrder loadOrders={loadOrders}/>
             &nbsp;
             <ModalButtonOrderDetails loadOrders={loadOrders}/>
+            &nbsp;
+            <ModalButtonUpdateOrder loadOrders={loadOrders} orders={orders}/>
 
         </div>
     );

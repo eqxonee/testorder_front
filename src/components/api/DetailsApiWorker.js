@@ -13,6 +13,10 @@ class DetailsApiWorker {
         return await this.#axios.post("/add-new-order-details", orderDetails);
     }
 
+    async ordersDetailsDeleteById(id) {
+        return await this.#axios.delete(`/deleteById/${id}`);
+    }
+
 
 
 }

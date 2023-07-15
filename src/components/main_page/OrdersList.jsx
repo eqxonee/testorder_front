@@ -20,6 +20,7 @@ const OrdersList = ({orders}) => {
                     {
                         order.orderDetails.map((item) =>(
                             <ul key ={item.id}>
+                                <li>ID продукта: {item.id}</li>
                                 <li>Серийный номер продукта: {item.serialNumber}</li>
                                 <li>Название продукта: {item.productName}</li>
                                 <li>Id заказчика: {item.orderId}</li>

@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
-import OrderApiWorker from "../api/OrderApiWorker";
 import {Button, Input, Modal, Space} from "antd";
+import DetailsApiWorker from "../api/DetailsApiWorker";
 
-const ModalButtonDeleteOrder = ({orders, loadOrders}) => {
-
-    let orderApiWorker = new OrderApiWorker();
+const ModalButtonDeleteOrderDetails = ({orders,loadOrders}) => {
+    let detailsApiWorker = new DetailsApiWorker();
     const [modalIsOpen, setModalOpen] = useState(false);
     let [removeOrder, setRemoveOrder] = useState({
         id: orders.id,
-        customerName: orders.customerName,
-        customerAddress: orders.customerAddress,
-        totalPrice: orders.totalPrice,
+        serialNumber: orders.serialNumber,
+        productName: orders.productName,
+        orderId: orders.orderId,
+        quantity: orders.quantity,
     });
 
-    const deleteOrder = (id) => {
+    const deleteDetailsOrder = (id) => {
         //alert(id);
-        orderApiWorker.orderDeleteById(id)
+        detailsApiWorker.ordersDetailsDeleteById(id)
             .then(response => {
                 loadOrders();
             })
@@ -23,24 +23,24 @@ const ModalButtonDeleteOrder = ({orders, loadOrders}) => {
     return (
 
         <Space style={{marginTop: "10px"}}>
-            <Button type="primary" onClick={() => setModalOpen(true)}>Удалить заказ</Button>
-            <Modal title="Удаление заказа"
+            <Button type="primary" onClick={() => setModalOpen(true)}>Удалить продукт</Button>
+            <Modal title="Удаление продукта"
                    centered
                    open={modalIsOpen}
                    onOk={() => {
                        setModalOpen(false)
-                       deleteOrder(removeOrder.id)
+                       deleteDetailsOrder(removeOrder.id)
                    }
                    }
                    onCancel={() => setModalOpen(false)}
-                   okText="Удалить заказ"
+                   okText="Удалить продукт"
                    cancelText="Отмена">
 
                 <div>
                     <div style={{marginTop: "5px"}}>
                         <Input type="number" value={removeOrder.id}
                                onChange={event => setRemoveOrder({...removeOrder, id: event.target.value})}
-                               placeholder={"номер заказа"}/>
+                               placeholder={"номер продукта"}/>
                     </div>
                 </div>
             </Modal>
@@ -48,5 +48,4 @@ const ModalButtonDeleteOrder = ({orders, loadOrders}) => {
     );
 };
 
-
-export default ModalButtonDeleteOrder;
+export default ModalButtonDeleteOrderDetails;

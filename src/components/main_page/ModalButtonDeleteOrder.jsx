@@ -18,7 +18,9 @@ const ModalButtonDeleteOrder = ({orders, loadOrders}) => {
         orderApiWorker.orderDeleteById(id)
             .then(response => {
                 loadOrders();
-            })
+            }).catch(e =>{
+                alert("Вы не можете удалить заказ с уже имющимся списком продуктов");
+        })
     }
     return (
 

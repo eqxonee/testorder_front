@@ -8,6 +8,7 @@ import ModalButtonOrderDetails from "./ModalButtonOrderDetails";
 import ModalButtonUpdateOrder from "./ModalButtonUpdateOrder";
 import ModalButtonDeleteOrder from "./ModalButtonDeleteOrder";
 import ModalButtonDeleteOrderDetails from "./ModalButtonDeleteOrderDetails";
+import ModalButtonUpdateOrderDetails from "./ModalButtonUpdateOrderDetails";
 
 const Orders = () => {
 
@@ -56,13 +57,17 @@ const Orders = () => {
             <h1>Заказы покупателей</h1>
             <ModalButtonOrder loadOrders={loadOrders}/>
             &nbsp;
-            <ModalButtonOrderDetails loadOrders={loadOrders}/>
-            &nbsp;
             <ModalButtonUpdateOrder loadOrders={loadOrders} orders={orders}/>
             &nbsp;
             <ModalButtonDeleteOrder loadOrders={loadOrders} orders={orders}/>
             &nbsp;
+            <ModalButtonOrderDetails loadOrders={loadOrders}/>
+            &nbsp;
+            <ModalButtonUpdateOrderDetails loadOrders={loadOrders} orders={orders}/>
+            &nbsp;
             <ModalButtonDeleteOrderDetails loadOrders={loadOrders} orders={orders}/>
+
+
             {
                 hasApiError === true
                     ? <Alert message="Ошибка в запросе" type="error"/>
